@@ -41,18 +41,12 @@ This project uses in-memory storage, so data is reset after restarting the appli
 ## Screenshots
 
 ### Home page
-![Home page](docs/screenshots/home.png)
+![Home page](doc/home.png)
 
 ### Tweet feed
-![Tweet feed](docs/screenshots/tweets.png)
+![Tweet feed](doc/tweets.png)
 
 ### Users page
-![Users page](docs/screenshots/users.png)
-
-## Future improvements
-
-- edit and delete tweets
-- persistent database
-- authentication
-- comments and retweets
-- improved user profiles
+![Users page](doc/users.png)
+![add User page](doc/adduser.png)
+![Users page](doc/addeduser.png)
