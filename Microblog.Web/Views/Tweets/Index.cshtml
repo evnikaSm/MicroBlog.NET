@@ -1,0 +1,50 @@
+﻿@model Microblog.Core.SystemMikroblogowania
+
+@{
+    ViewData["Title"] = "Tweets";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1 class="mb-1">Tweet Feed</h1>
+        <p class="text-muted mb-0">All tweets in the system</p>
+    </div>
+</div>
+
+@if (Model.LiczbaTweetow == 0)
+{
+    <div class="alert alert-info">
+        No tweets yet.
+    </div>
+}
+else
+{
+    @for (int i = 0; i < Model.LiczbaTweetow; i++)
+    {
+        var tweet = Model.Tweety[i];
+        var stats = Model.Statystyki[i];
+
+        <div class="card shadow-sm border-0 mb-3">
+            <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <div>
+                        <h5 class="mb-1">@tweet.Autor.NazwaUzytkownika</h5>
+                        <div class="text-muted small">@tweet.DataUtworzenia</div>
+                    </div>
+                    <span class="badge bg-primary">Tweet #@tweet.Id</span>
+                </div>
+
+                <p class="mb-2 fs-5">@tweet.Trest</p>
+
+                <div class="text-muted small mb-3">
+                    Likes: @stats.LiczbaPolubien
+                </div>
+
+                <form asp-action="Like" method="post">
+                    <input type="hidden" name="id" value="@tweet.Id" />
+                    <button type="submit" class="btn btn-sm btn-outline-primary">Like</button>
+                </form>
+            </div>
+        </div>
+    }
+}

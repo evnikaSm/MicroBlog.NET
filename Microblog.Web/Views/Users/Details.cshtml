@@ -1,0 +1,36 @@
+﻿@model Microblog.Core.Uzytkownik
+
+@{
+    ViewData["Title"] = "User";
+}
+
+<div class="card shadow-sm border-0 mb-4">
+    <div class="card-body p-4">
+
+        <h2 class="mb-2">@Model.NazwaUzytkownika</h2>
+
+        <p class="text-muted mb-2">
+            Email: @Model.Email
+        </p>
+
+        <p class="text-muted mb-2">
+            Registered: @Model.DataRejestracji
+        </p>
+
+        <p class="mb-3">
+            Followers: @Model.LiczbaObserwujacych
+        </p>
+
+        <form asp-action="Follow" method="post">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <button class="btn btn-primary">
+                Follow
+            </button>
+        </form>
+
+    </div>
+</div>
+
+<a asp-action="Index" class="btn btn-outline-secondary">
+    Back to users
+</a>

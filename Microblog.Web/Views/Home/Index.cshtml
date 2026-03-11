@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center mb-5">
+    <h1 class="display-4 fw-semibold">MicroBlog</h1>
+    <p class="lead text-muted">Simple microblogging app built with ASP.NET Core MVC</p>
+    <a asp-controller="Tweets" asp-action="Index" class="btn btn-primary btn-lg mt-2">
+        Open Tweet Feed
+    </a>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-8">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body p-4">
+                <h3 class="mb-3">About this project</h3>
+                <p>
+                    This application is based on an object-oriented programming assignment in C#.
+                    The original domain classes were reused inside an ASP.NET Core MVC web app.
+                </p>
+                <p class="mb-0">
+                    It includes users, tweets, tweet statistics, and a simple microblogging system.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-body p-4">
+                <h4 class="mb-3">Features</h4>
+                <ul class="mb-0">
+                    <li>User class</li>
+                    <li>Tweet record</li>
+                    <li>Tweet statistics</li>
+                    <li>Microblogging system</li>
+                    <li>ASP.NET Core MVC interface</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
